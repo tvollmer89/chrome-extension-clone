@@ -12,7 +12,9 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("https://source.unsplash.com/UNOMwllEXfg") no-repeat center center fixed;
+  //Getting an error for background link, subbing in temp linked image
+  background-image: url('../../images/bg-backup.jpg');
+  //background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("https://source.unsplash.com/UNOMwllEXfg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
