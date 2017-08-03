@@ -10,9 +10,7 @@ function success(position) {
     console.log( "success", data );
     return data;
   }).fail(function() {
-    console.log( "error" );
   });
-  console.log(timeZone)
 }
 
 function error() {
@@ -32,11 +30,23 @@ function startTime() {
     let today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
-    let s = today.getSeconds();
+    //let s = today.getSeconds();
+    let p= "AM";
+    let tod = "morning";
+
+    // change to US time format.
+    // ^^Only in US?
+    if(h>12){
+      h= h-12;
+      p="PM";
+      tod = (h>=6)?"evening":"afternoon";
+    }
     m = checkTime(m);
-    s = checkTime(s);
+    //s = checkTime(s);
     document.getElementById('time').innerHTML =
-    h + ":" + m + ":" + s;
+    //h + ":" + m + ":" + s;
+    h + ":" + m + " " + p;
+    document.getElementById("greeting-time").innerHTML = tod;
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
